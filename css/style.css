@@ -8,12 +8,12 @@
   ===================*/
 body{
 /* font-family: 'Open Sans', sans-serif; */
-font-family: 'Saira', sans-serif;
-overflow-x: hidden;
-font-size:18px;
-font-weight:400;
-background-color:#fff;
-color:#6f6b80;
+    font-family: 'Saira', sans-serif;
+    overflow-x: hidden;
+    font-size:18px;
+    font-weight:400;
+    background-color:#fff;
+    color:#6f6b80;
 } 
 :root{
     --red: #f75023;
@@ -95,24 +95,31 @@ background-color: blue;
     width: 28%;
 }
 /*===========================
-    Jquery scrollTop start
+      scroll to Top start
   ==========================*/
 .scrollTop .fa-chevron-up{
     position: fixed;
-    bottom: 40px;
+    bottom: 600px;
     right: 40px;
     width: 50px;
     height: 50px;
     background: #D95435;
     text-align: center;
-    line-height: 50px;
+    line-height: 53px;
     border-radius: 40px;
     color: #FFF;
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     font-size: 16px;
     font-weight: 700;
     z-index: 99;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+.scrollTop .fa-chevron-up.activeNess{
+    visibility: visible;
+    opacity: 1;
+    bottom: 40px;
+    transition: all 0.4s ease-in-out;
 }
 
 /*========================
@@ -150,20 +157,20 @@ nav .logos .simage{
     width: 45px;
     margin-right: 10px;
 }
-#menu {
+.menu {
     display: flex;
     align-items: center;
 }
-#menu ul{
+.menu ul{
  padding: 0;
  margin: 0;
 }
-#menu ul li{
+.menu ul li{
   list-style: none;
   display: inline-block;
   margin: 0 30px 0 0;
 }
-#menu ul li a{
+.menu ul li a{
     position: relative;
     color: #000;
     font-size: 16px;
@@ -172,10 +179,10 @@ nav .logos .simage{
     transition: all .3s ease-in-out;
     text-transform: capitalize; 
 }
-#menu ul li.active a{
+.menu ul li.active a{
   color: var(--red);
 }
-#menu ul li a::before{
+.menu ul li a::before{
     position: absolute;
     content: "";
     width: 0%;
@@ -185,16 +192,16 @@ nav .logos .simage{
     right: 0;
     transition: all 0.3s ease-in-out;
 }
-#menu ul li a:hover::before{
+.menu ul li a:hover::before{
   width: 100%;
   left: 0;
   transition: all 0.3s ease-in-out;
 }
-#menu ul li a:hover{
+.menu ul li a:hover{
     color: var(--red);
     transition: all .3s ease-in-out;
 }
-#menu .button .send-email{
+.menu .button .send-email{
     padding: 10px 34px 9px;
     text-decoration: none;
     display: inline-block;
@@ -207,7 +214,7 @@ nav .logos .simage{
     text-transform: capitalize;
     z-index: 2;
 }
-#menu .button .send-email::before{
+.menu .button .send-email::before{
     position: absolute;
     content: "";
     width: 100%;
@@ -218,23 +225,23 @@ nav .logos .simage{
     transition: all 0.2s ease-in-out;
     z-index: -1;
 }
-#menu .button .send-email:hover::before{
+.menu .button .send-email:hover::before{
     bottom: 0%;
     transition: all 0.2s ease-in-out;
 }
-#menu .button .send-email .cv{
+.menu .button .send-email .cv{
     color: var(--black);
 }
-#menu .button .send-email:hover .cv{
+.menu .button .send-email:hover .cv{
     color: var(--white);
     position: relative;
     z-index: 2;
     transition: all 0.2s ease-in-out;
 }
-#menu #close{
+.menu .close{
     display: none;
 }
-#bars{
+.bars{
     display: none;
     width: 30px;
 }
@@ -1119,17 +1126,20 @@ footer p{
     
 .preloader .pre { width: 50%;}
 
+.scrollTop .fa-chevron-up.activeNess { bottom: 25px;}
+.scrollTop .fa-chevron-up {right: 20px;}
+
 header { padding: 10px 4%;}
 nav .logos .simage { width: 34px; margin-right: 6px;}
 header nav .logos { font-size: 30px;}
-#menu { display: initial; background: #FFF; position: absolute; width: 70%; height: 100vh; left: -100%; top: 0; box-shadow: 0px 0px 20px rgb(0 0 0 / 50%); transition: all 0.3s ease-in-out;}
-#menu.active1{ left: 0; transition: all 0.3s ease-in-out;}
-#menu ul { text-align: center;  margin: 80px 0 0 0;}
-#menu ul li { margin: 20px 0px 0 0; display: block;}
-#menu ul li a { font-size: 18px;}
-#menu .button .send-email { display: block; margin: 20px auto 0; text-align: center; width: 180px; font-size: 16px;}
-#menu #close { display: block; position: absolute; top: 15px; right: 15px; width: 20px;}
-#bars { display: block; width: 24px;}
+.menu { display: initial; background: #FFF; position: absolute; width: 70%; height: 100vh; left: -100%; top: 0; box-shadow: 0px 0px 20px rgb(0 0 0 / 50%); transition: all 0.3s ease-in-out;}
+.menu.active1{ left: 0; transition: all 0.3s ease-in-out;}
+.menu ul { text-align: center;  margin: 80px 0 0 0;}
+.menu ul li { margin: 20px 0px 0 0; display: block;}
+.menu ul li a { font-size: 18px;}
+.menu .button .send-email { display: block; margin: 20px auto 0; text-align: center; width: 180px; font-size: 16px;}
+.menu .close { display: block; position: absolute; top: 15px; right: 15px; width: 20px;}
+.bars { display: block; width: 24px;}
 
 .hero-section { padding: 120px 0;}
 .home-details h1 { font-size: 42px; margin-bottom: 16px;}

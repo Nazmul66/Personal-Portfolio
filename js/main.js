@@ -18,7 +18,7 @@ var typed = new Typed('.type', {
     backDelay: 2000,
   });
 
-  // vanila tilt.js Code
+  // Vanila-tilt.js Code
   
   VanillaTilt.init(document.querySelectorAll(".workout"), {
 		max: 30,
@@ -50,23 +50,18 @@ var typed = new Typed('.type', {
 })
 
   ////  Scrolltop bar jquery code
-  $(document).ready(function(){
 
-    $(window).scroll(function(){
-        if($(this).scrollTop() > 100){
-            $(".fa-chevron-up").fadeIn();
-        }
-        else{
-            $(".fa-chevron-up").fadeOut();
-        }
-    });
+   window.addEventListener("scroll",function(){
+      var scroll = document.querySelector(".fa-chevron-up");
+      scroll.classList.toggle("activeNess", window.scrollY > 100);
+   });
 
-    $(".fa-chevron-up").click(function(){
-        $("body").animate({scrollTop:0
-        
-        },500);
-    });
-});
+   function scrolling(){
+    window.scrollTo({
+      top: 0 ,
+      behavior: 'smooth'
+    })
+   }
 
 ////  sticky navigation jquery code
 $(document).ready(function(){
@@ -94,12 +89,41 @@ AOS.init({
 });
 
 /// Custom js code
-function click1(){
-  var mar = document.querySelector("#menu");
-  mar.classList.add("active1"); 
-}
 
-function click2(){
-  var mar = document.querySelector("#menu");
-  mar.classList.remove("active1"); 
-}
+var close = document.querySelector(".close");
+var bar = document.querySelector(".bars");
+var menu = document.querySelector(".menu");
+
+  bar.addEventListener("click",function(){
+    menu.classList.add('active1');
+});
+
+close.addEventListener("click",function(){
+  menu.classList.remove('active1');
+});
+
+window.addEventListener("scroll",function(){
+   menu.classList.remove('active1');
+});
+
+
+
+
+
+// $(document).ready(function(){
+
+//   $(window).scroll(function(){
+//       if($(this).scrollTop() > 100){
+//           $(".fa-chevron-up").fadeIn();
+//       }
+//       else{
+//           $(".fa-chevron-up").fadeOut();
+//       }
+//   });
+
+//   $(".fa-chevron-up").click(function(){
+//       $('body').animate({scrollTop:0
+      
+//       },500);
+//   });
+// });
